@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GifkaSearch</string>
+    <string name="enter_gif">Введите гифку</string>
 </resources>

@@ -7,11 +7,14 @@ object RetrofitBuilder {
 
     private const val BASE_URL = "https://api.giphy.com/v1/gifs/"
 
-    private val retrofit: Retrofit =
+    private val retrofit by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+    }
 
-    val apiService: ApiService = retrofit.create(ApiService::class.java)
+    val apiService by lazy {
+        retrofit.create(ApiService::class.java)
+    }
 }
